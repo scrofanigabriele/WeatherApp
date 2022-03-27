@@ -14,34 +14,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  bool _isInit = true;
-
-  // @override
-  // void didChangeDependencies() {
-  //   if(_isInit == false) {
-  //     setState(() {
-  //       _cityName = ModalRoute
-  //           .of(context)!
-  //           .settings
-  //           .arguments as String;
-  //       print('True');
-  //     });
-  //   } else {
-  //     setState(() {
-  //       _isInit = false;
-  //       print('False');
-  //     });
-  //   }
-  //
-  //   super.didChangeDependencies();
-  // }
-
-  void _selectPage(int index){
-    if (index == 0)
-    Navigator.of(context).pushNamed('/');
-    else if (index == 1)
-      Navigator.of(context).pushNamed(SelectCity.routeName);
-  }
 
   @override
   Widget build(BuildContext context) {

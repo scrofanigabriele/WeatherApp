@@ -13,7 +13,7 @@ class GHFlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => new SelectedCity(),
+      create: (_) => SelectedCity(),
       child: MaterialApp(
         title: 'My Weather App',
         theme:
