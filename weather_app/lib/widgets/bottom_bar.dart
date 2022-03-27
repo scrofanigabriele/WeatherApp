@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/pages/search_page.dart';
 
 import '../widgets/weather_presentation.dart';
 import '../pages/select_city_page.dart';
@@ -16,9 +17,9 @@ class _BottomBarState extends State<BottomBar> {
 
   void _selectPage(int index){
     if (index == 0) {
-      Navigator.of(context).pushReplacementNamed('/');
+      Navigator.of(context).pushReplacementNamed(SearchPage.routeName);
     } else if (index == 1) {
-      Navigator.of(context).pushReplacementNamed(SelectCity.routeName);
+      Navigator.of(context).pushReplacementNamed('/');
     }
   }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-List cities = [
+
+List<String> cities = [
   'Istanbul',
   'Moscow',
   'London',
@@ -41,6 +42,7 @@ class SelectedCity with ChangeNotifier{
 
   void changeSelection(String newCity) {
     _name = newCity;
+    print(_name);
     notifyListeners();
 }
 }

@@ -4,7 +4,7 @@ import '../widgets/bottom_bar.dart';
 import '../widgets/cities_grid.dart';
 
 class SelectCity extends StatelessWidget {
-  static const routeName = '/selectCity';
+  static const routeName = '/';
 
   @override
   Widget build(BuildContext context) {

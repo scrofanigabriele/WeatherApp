@@ -18,9 +18,9 @@ class GHFlutterApp extends StatelessWidget {
         title: 'My Weather App',
         theme:
             ThemeData(appBarTheme: AppBarTheme(backgroundColor: Colors.amber)),
-        home: SearchPage(),
+        home: SelectCity(),
         routes: {
-          SelectCity.routeName: (ctx) => SelectCity(),
+          SearchPage.routeName: (ctx) => SearchPage(),
         },
       ),
     );
