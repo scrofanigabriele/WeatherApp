@@ -25,7 +25,7 @@ class _WeatherPresentationState extends State<WeatherPresentation> {
     List<WeatherDay> weatherForecast = [];
     String day;
     var dataUrl =
-        'https://api.weatherbit.io/v2.0/forecast/daily?city=${widget._cityName}&key=38ff7a5f9aa44a4fb8a39690b036d5cb';
+        'https://api.weatherbit.io/v2.0/forecast/daily?city=${widget._cityName}&key=0a5a89cbc5ca43e18dcd31fdb80e21a5';
     final response = await http.get(Uri.parse(dataUrl));
     final data = json.decode(response.body) as Map<String, dynamic>;
 
