@@ -30,6 +30,11 @@ class _SearchPageState extends State<SearchPage> {
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               child: TypeAheadField(
+                textFieldConfiguration: TextFieldConfiguration(
+                    decoration: InputDecoration(
+                        labelText: 'Select City'
+                    )
+                ),
                 suggestionsCallback: (pattern) async {
                   return cities;
                 },
@@ -54,7 +59,7 @@ class _SearchPageState extends State<SearchPage> {
               height: 40,
             ),
           ),
-          WeatherPresentation(),
+          WeatherPresentation(true),
         ],
       ),
       bottomNavigationBar: BottomBar(0),
