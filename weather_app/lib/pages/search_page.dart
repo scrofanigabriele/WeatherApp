@@ -4,6 +4,7 @@ import 'package:weather_app/providers/city_list.dart';
 
 import '../widgets/weather_presentation.dart';
 import 'select_city_page.dart';
+import '../providers/city_list.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/bottom_bar.dart';
@@ -16,6 +17,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+  final TextEditingController _typeAheadController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var selectedCity = Provider.of<SelectedCity>(context);
@@ -29,11 +31,12 @@ class _SearchPageState extends State<SearchPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
-              child: TypeAheadField(
+              child: TypeAheadFormField(
                 textFieldConfiguration: TextFieldConfiguration(
+                  controller: _typeAheadController,
                     decoration: InputDecoration(
                         labelText: 'Select City'
-                    )
+                    ),
                 ),
                 suggestionsCallback: (pattern) async {
                   return cities;
@@ -43,23 +46,26 @@ class _SearchPageState extends State<SearchPage> {
                     title: Text(suggestion.toString()),
                   );
                 },
+                onSaved: (suggestion) {
+                  print('saved');
+                  selectedCity.changeSelection(suggestion.toString());
+                } ,
+                validator: (suggestion){
+                  var exist = cities.where((element) => element == suggestion.toString());
+                  if (exist == null) {
+                    print('errore');
+                    return 'select a proper city form the list';
+                  }
+                },
                 onSuggestionSelected: (suggestion){
                   selectedCity.changeSelection(suggestion.toString());
                   // Navigator.of(context).popAndPushNamed(SearchPage.routeName);
                 },
               ),
-              // child: TextField(
-              //   decoration: InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     labelText: 'Search',
-              //   ),
-              //   textAlign: TextAlign.center,
-              //   onSubmitted: (_){},
-              // ),
               height: 40,
             ),
           ),
-          WeatherPresentation(true),
+          WeatherPresentation(),
         ],
       ),
       bottomNavigationBar: BottomBar(0),

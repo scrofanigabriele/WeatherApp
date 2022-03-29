@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 List<String> cities = [
-  'Istanbul',
+  'Valencia',
+  'Catania',
   'Moscow',
   'London',
   'Saint',

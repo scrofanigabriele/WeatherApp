@@ -12,7 +12,6 @@ import '../providers/city_list.dart';
 class WeatherPresentation extends StatefulWidget {
   bool isInit = true;
 
-  WeatherPresentation(this.isInit);
 
   @override
   State<WeatherPresentation> createState() => _WeatherPresentationState();
@@ -23,12 +22,12 @@ class _WeatherPresentationState extends State<WeatherPresentation> {
   bool _isLoading = false;
   List<WeatherDay> _weatherForecast = [];
 
-  Future<void> fetchAndSetForecast(SelectedCity selectedCity) async {
+  Future<void> fetchAndSetForecast(String selectedCity) async {
     List<WeatherDay> weatherForecast = [];
     String day;
     // print(selectedCity.name);
     var dataUrl =
-        'https://api.weatherbit.io/v2.0/forecast/daily?city=${selectedCity.name}&key=0a5a89cbc5ca43e18dcd31fdb80e21a5';
+        'https://api.weatherbit.io/v2.0/forecast/daily?city=${selectedCity}&key=0a5a89cbc5ca43e18dcd31fdb80e21a5';
     _isLoading = true;
     final response = await http.get(Uri.parse(dataUrl));
     final data = json.decode(response.body) as Map<String, dynamic>;
@@ -61,7 +60,8 @@ class _WeatherPresentationState extends State<WeatherPresentation> {
 
   @override
   Widget build(BuildContext context) {
-    var selectedCity = Provider.of<SelectedCity>(context);
+    print(widget.isInit);
+    var selectedCity = Provider.of<SelectedCity>(context).name;
     if (widget.isInit) {
       fetchAndSetForecast(selectedCity);
       widget.isInit = false;
