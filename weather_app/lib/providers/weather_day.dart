@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class WeatherDay {
   String day = 'Today';
   String iconId = 'c03d';
@@ -6,10 +8,10 @@ class WeatherDay {
   var minTemp = 10.0;
 
   WeatherDay({
-    required this.day,
-    required this.iconId,
-    required this.maxTemp,
-    required this.minTemp,
-    required this.weatherDescription,
+    @required this.day,
+    @required this.iconId,
+    @required this.maxTemp,
+    @required this.minTemp,
+    @required this.weatherDescription,
   });
 }

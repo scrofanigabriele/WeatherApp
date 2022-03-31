@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './weather_row.dart';
+import '../meteo_presentation_page/presentation/weather_row.dart';
 import '../providers/weather_day.dart';
 
 import 'package:intl/intl.dart';

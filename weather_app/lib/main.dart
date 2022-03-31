@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './pages/search_page.dart';
+import 'meteo_presentation_page/meteo_presentation_page.dart';
 import './providers/city_list.dart';
-import './pages/select_city_page.dart';
+import 'tab_bar_page/presentation/tab_bar_page.dart';
+import 'select_city_page/select_city_page.dart';
 
-void main() => runApp(const GHFlutterApp());
+void main() => runApp(const WeatherApp());
 
-class GHFlutterApp extends StatelessWidget {
-  const GHFlutterApp({Key? key}) : super(key: key);
+class WeatherApp extends StatelessWidget {
+  const WeatherApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => SelectedCity(),
-      child: MaterialApp(
-        title: 'My Weather App',
-        theme:
-            ThemeData(appBarTheme: AppBarTheme(backgroundColor: Colors.amber)),
-        home: SearchPage(),
-        routes: {
-          SelectCity.routeName: (ctx) => SelectCity(),
-        },
-      ),
+    return MaterialApp(
+      title: 'My Weather App',
+      theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Colors.amber)),
+      home: TabBarPage(),
+      routes: {
+        SelectCity.routeName: (ctx) => SelectCity(),
+      },
     );
   }
 }

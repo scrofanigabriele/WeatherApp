@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/providers/city_list.dart';
 
 import '../widgets/weather_presentation.dart';
-import 'select_city_page.dart';
+import '../select_city_page/select_city_page.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/bottom_bar.dart';
 
-class SearchPage extends StatefulWidget {
+class MeteoPresentationPage extends StatefulWidget {
   static const routeName = '/';
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _MeteoPresentationPageState createState() => _MeteoPresentationPageState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _MeteoPresentationPageState extends State<MeteoPresentationPage> {
 
   @override
   Widget build(BuildContext context) {
-    var _cityName = Provider.of<SelectedCity>(context).name;
+    var _cityName = 'London';
     return Scaffold(
       appBar: AppBar(
         title: const Text('Search Page'),
@@ -32,7 +32,7 @@ class _SearchPageState extends State<SearchPage> {
                   border: OutlineInputBorder(),
                   labelText: 'Search',
                 ),
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.start,
                 onSubmitted: (_){},
               ),
               height: 40,
