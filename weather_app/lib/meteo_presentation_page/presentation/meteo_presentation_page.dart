@@ -38,7 +38,7 @@ class _MeteoPresentationPageState extends State<MeteoPresentationPage> {
               height: 40,
             ),
           ),
-          WeatherPresentation(_cityName),
+          WeatherPresentation(weatherForecast: [],),
         ],
       ),
       bottomNavigationBar: BottomBar(0),

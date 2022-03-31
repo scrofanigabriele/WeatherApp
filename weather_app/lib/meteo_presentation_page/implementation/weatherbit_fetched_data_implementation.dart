@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../implementation/weather_day.dart';
-import '../abstraction/weatherbit_fetched_data_controller.dart';
+import '../abstraction/weatherbit_fetched_data_formatter.dart';
 
 
 
-class WeatherBitFiveDaysFetchedDataFormatter implements WeatherBitFetchedDataController{
+class WeatherBitFiveDaysFetchedDataFormatter implements WeatherBitFetchedDataFormatter{
   @override
   var fetchedData;
 
@@ -19,12 +19,14 @@ class WeatherBitFiveDaysFetchedDataFormatter implements WeatherBitFetchedDataCon
     List<WeatherDay> weatherForecast = [];
     for (int i = 0; i < 5; i++) {
       var weatherInfo = fetchedData['data'][i];
+      // print(weatherInfo['pres']);
       if (DateFormat.EEEE().format(DateTime.parse(weatherInfo['datetime'])) ==
           DateFormat.EEEE().format(DateTime.now())) {
         day = 'Today';
       } else {
         day = DateFormat.EEEE().format(DateTime.parse(weatherInfo['datetime']));
       }
+
       String iconId =
           'https://www.weatherbit.io/static/img/icons/${weatherInfo['weather']['icon']}.png';
       String weatherDescription = weatherInfo['weather']['description'];
@@ -37,5 +39,7 @@ class WeatherBitFiveDaysFetchedDataFormatter implements WeatherBitFetchedDataCon
           minTemp: minTemp,
           weatherDescription: weatherDescription));
     }
+
+    return weatherForecast;
   }
 }

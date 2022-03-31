@@ -1,6 +1,6 @@
 
 
-abstract class WeatherBitFetchedDataController {
+abstract class WeatherBitFetchedDataFormatter {
   var fetchedData;
 
   formatWeatherBitFetchedData();

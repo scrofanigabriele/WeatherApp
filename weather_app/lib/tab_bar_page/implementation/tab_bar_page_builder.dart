@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/tab_bar_page/implementation/single_tab_item.dart';
 
 import '../abstraction/tab_bar_page_selection_controller.dart';
 
