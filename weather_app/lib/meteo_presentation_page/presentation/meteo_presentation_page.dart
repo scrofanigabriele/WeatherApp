@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/providers/city_list.dart';
+import 'package:weather_app/select_city_page/implementation/city_list.dart';
 
-import '../widgets/weather_presentation.dart';
-import '../select_city_page/select_city_page.dart';
+import 'weather_presentation.dart';
+import '../../select_city_page/presentation/select_city_page.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/bottom_bar.dart';
+import '../../widgets/bottom_bar.dart';
 
 class MeteoPresentationPage extends StatefulWidget {
   static const routeName = '/';

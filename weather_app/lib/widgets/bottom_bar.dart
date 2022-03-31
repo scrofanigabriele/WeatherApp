@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/weather_presentation.dart';
-import '../select_city_page/select_city_page.dart';
+import '../meteo_presentation_page/presentation/weather_presentation.dart';
+import '../select_city_page/presentation/select_city_page.dart';
 
 class BottomBar extends StatefulWidget {
   final int index;

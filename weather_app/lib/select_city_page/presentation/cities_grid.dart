@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../providers/city_list.dart';
+import '../implementation/city_list.dart';
 import 'city_button.dart';
 
 class CitiesGrid extends StatelessWidget {
