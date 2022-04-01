@@ -37,10 +37,7 @@ class JsonFetchForecast implements FetchForecastController {
         .loadString('assets/weather.json');
 
     var fetchedData = json.decode(response.toString()) as Map<String, dynamic>;
-    // var  = json.decode(response) as ;
-    return
-    fetchedData;
 
-    // return fetchedData;
+    return fetchedData;
   }
 }

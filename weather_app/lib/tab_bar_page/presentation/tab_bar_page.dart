@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/meteo_presentation_page/implementation/fetch_forecast_implementation.dart';
 import 'package:weather_app/meteo_presentation_page/implementation/weather_presentation_implementation.dart';
-import 'package:weather_app/meteo_presentation_page/implementation/weatherbit_fetched_data_implementation.dart';
+import 'package:weather_app/meteo_presentation_page/implementation/fetched_data_implementation.dart';
 
 import 'package:weather_app/tab_bar_page/implementation/single_tab_item.dart';
 import '../implementation/tab_bar_page_selection_implementation.dart';

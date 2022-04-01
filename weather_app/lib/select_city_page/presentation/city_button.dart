@@ -22,10 +22,10 @@ class _CityButtonState extends State<CityButton> {
 
   @override
   Widget build(BuildContext context) {
-    var newCity = Provider.of<SelectedCity>(context);
+    // var newCity = Provider.of<SelectedCity>(context);
 
     return InkWell(
-      onTap: () => _selectCity(context,newCity),
+      onTap: () {},//=> _selectCity(context,newCity),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(

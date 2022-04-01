@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../implementation/weather_day.dart';
-import '../abstraction/weatherbit_fetched_data_formatter.dart';
+import '../abstraction/fetched_data_formatter.dart';
 
 
 
-class WeatherBitFiveDaysFetchedDataFormatter implements WeatherBitFetchedDataFormatter{
+class WeatherBitFiveDaysFetchedDataFormatter implements FetchedDataFormatter{
   @override
   var fetchedData;
 

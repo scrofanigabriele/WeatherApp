@@ -15,7 +15,7 @@ class WeatherPageBuilder extends StatelessWidget {
       future: weatherPresentationBuilder.fetchAndFormatData(),
       builder: (BuildContext context, AsyncSnapshot formattedWeatherData) {
         if (!formattedWeatherData.hasData) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         } else {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../abstraction/weather_presentation_controller.dart';
-import '../abstraction/weatherbit_fetched_data_formatter.dart';
+import '../abstraction/fetched_data_formatter.dart';
 import '../abstraction/fetch_forecast_controller.dart';
 import './weather_day.dart';
 
 class WeatherPresentationBuilder implements WeatherPresentationController {
   FetchForecastController forecastController;
-  WeatherBitFetchedDataFormatter fetchedDataFormatter;
+  FetchedDataFormatter fetchedDataFormatter;
 
   WeatherPresentationBuilder(
       {@required this.forecastController, @required this.fetchedDataFormatter});
