@@ -25,31 +25,13 @@ class _TabBarPageState extends State<TabBarPage> {
   String cityName;
   SelectPageController tabIdx = SimpleSelectPageImplementation();
 
-  @override
-  void initState() {
-    cityName = selectedCity.name;
-    print('initState SimpleSelectPageImplementation');
-    // print(cityName);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     selectedCity.addListener(() {
       setState(() {
-        cityName = selectedCity.name;
-        build(context);
-        // print(cityName);
       });
     });
-    tabIdx.addListener(() {
-      setState(() {
-        cityName = selectedCity.name;
-        print('listener di tabIdx');
-        build(context);
-      });
-    });
-    // print(cityName);
     return Scaffold(
       bottomNavigationBar: TabBarPageBuilder(
         controller: DefaultTabBarSelectorController(

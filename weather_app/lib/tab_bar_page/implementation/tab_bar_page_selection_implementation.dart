@@ -4,7 +4,6 @@ import '../implementation/single_tab_item.dart';
 import '../implementation/loop_widget_implementation.dart';
 import '../abstraction/tab_bar_page_selection_controller.dart';
 import '../abstraction/select_page_controller.dart';
-import './select_page_implementation.dart';
 
 class SimpleTabBarSelectionPageController
     implements TabBarPageSelectionController {

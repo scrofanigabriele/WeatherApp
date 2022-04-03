@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import 'meteo_presentation_page/presentation/meteo_presentation_page.dart';
-import 'select_city_page/implementation/city_list.dart';
 import 'tab_bar_page/presentation/tab_bar_page.dart';
 import 'widgets/select_city_page.dart';
 
