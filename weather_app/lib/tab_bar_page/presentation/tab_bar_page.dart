@@ -41,10 +41,11 @@ class _TabBarPageState extends State<TabBarPage> {
               icon: const Icon(Icons.search),
               title: 'Search',
               widget: WeatherPageBuilder(
-                weatherPresentationBuilder: WeatherPresentationBuilder(
+                controller: WeatherPresentationBuilder(
+                  selectedCity: selectedCity,
                   fetchedDataFormatter:
                       WeatherBitFiveDaysFetchedDataFormatter(),
-                  forecastController: HttpFetchSelectedCityForecast(selectedCity: selectedCity,),
+                  forecastController: HttpFetchSelectedCityForecast(),
                 ),
               ),
             ),

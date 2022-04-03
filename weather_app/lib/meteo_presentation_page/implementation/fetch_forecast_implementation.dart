@@ -49,15 +49,15 @@ class HttpFetchSelectedCityForecast implements FetchSelectedCityForecastControll
   @override
   SelectedCity selectedCity;
 
-  HttpFetchSelectedCityForecast({@required this.selectedCity});
+  HttpFetchSelectedCityForecast({this.selectedCity});
 
   @override
   fetchForecast() async {
-    print('fetching data = ${selectedCity.name}');
+    // print('fetching data = ${selectedCity.name}');
     // var dataUrl =
     //     'https://api.weatherbit.io/v2.0/forecast/daily?city=london&key=0a5a89cbc5ca43e18dcd31fdb80e21a5';
     var dataUrl =
-        'https://api.weatherbit.io/v2.0/forecast/daily?city=${selectedCity.name}&key=0a5a89cbc5ca43e18dcd31fdb80e21a5';
+        'https://api.weatherbit.io/v2.0/forecast/daily?city=${selectedCity.name}&key=38ff7a5f9aa44a4fb8a39690b036d5cb';
     final response = await http.get(Uri.parse(dataUrl));
     final fetchedData = json.decode(response.body) as Map<String, dynamic>;
 
