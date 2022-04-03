@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:weather_app/meteo_presentation_page/implementation/fetch_forecast_implementation.dart';
 import 'package:weather_app/meteo_presentation_page/implementation/weather_presentation_implementation.dart';
 import 'package:weather_app/meteo_presentation_page/implementation/fetched_data_implementation.dart';
 import 'package:weather_app/select_city_page/implementation/city_list.dart';
-import 'package:weather_app/tab_bar_page/implementation/select_page_implementation.dart';
+import 'package:weather_app/tab_bar_page/implementation/tab_index_implementation.dart';
 
 import 'package:weather_app/tab_bar_page/implementation/single_tab_item.dart';
 import '../implementation/tab_bar_page_selection_implementation.dart';
 import '../implementation/tab_bar_page_builder.dart';
 import '../../meteo_presentation_page/implementation/weather_page_builder.dart';
 import '../../select_city_page/presentation/cities_grid.dart';
-import '../abstraction/select_page_controller.dart';
+import '../abstraction/tab_index_controller.dart';
 
 class TabBarPage extends StatefulWidget {
   const TabBarPage({Key key}) : super(key: key);
@@ -21,19 +22,18 @@ class TabBarPage extends StatefulWidget {
 
 class _TabBarPageState extends State<TabBarPage> {
   bool isInit = true;
-  var selectedCity = SelectedCity();
+  SelectedCity selectedCity = SelectedCity();
   String cityName;
-  SelectPageController tabIdx = SimpleSelectPageImplementation();
-
+  tabIndexController tabIdx = SimpleTabIndex();
 
   @override
   Widget build(BuildContext context) {
-    selectedCity.addListener(() {
+
+    tabIdx.addListener(() {
       setState(() {
       });
     });
-    return Scaffold(
-      bottomNavigationBar: TabBarPageBuilder(
+    return TabBarPageBuilder(
         controller: DefaultTabBarSelectorController(
           tabIdx: tabIdx,
           tabBarItemList: [
@@ -59,7 +59,6 @@ class _TabBarPageState extends State<TabBarPage> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'tab_bar_page/presentation/tab_bar_page.dart';
-import 'widgets/select_city_page.dart';
+
 
 void main() => runApp(const WeatherApp());
 
@@ -13,10 +13,7 @@ class WeatherApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Weather App',
       theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Colors.amber)),
-      home: TabBarPage(),
-      routes: {
-        SelectCity.routeName: (ctx) => SelectCity(),
-      },
+      home: const TabBarPage(),
     );
   }
 }

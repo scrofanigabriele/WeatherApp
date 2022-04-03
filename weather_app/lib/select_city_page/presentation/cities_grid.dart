@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../implementation/city_list.dart';
 import 'city_button.dart';
-import '../../tab_bar_page/abstraction/select_page_controller.dart';
+import '../../tab_bar_page/abstraction/tab_index_controller.dart';
 
 
 class CitiesGrid extends StatelessWidget {
   List cities;
   SelectedCity selectedCity;
-  SelectPageController tabIdx;
+  tabIndexController tabIdx;
 
 
   CitiesGrid({@required this.cities,@required this.selectedCity, @required this.tabIdx});

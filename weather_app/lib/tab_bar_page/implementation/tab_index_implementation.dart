@@ -1,8 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
-import 'package:weather_app/tab_bar_page/abstraction/select_page_controller.dart';
+import '../abstraction/tab_index_controller.dart';
 
-class SimpleSelectPageImplementation with ChangeNotifier implements SelectPageController{
+class SimpleTabIndex with ChangeNotifier implements tabIndexController{
   int _selectedIdx = 0;
 
   @override

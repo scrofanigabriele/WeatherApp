@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../implementation/city_list.dart';
-import '../../tab_bar_page/abstraction/select_page_controller.dart';
+import '../../tab_bar_page/abstraction/tab_index_controller.dart';
 
 
 class CityButton extends StatefulWidget {
   String cityName;
   SelectedCity selectedCity;
-  SelectPageController tabIdx;
+  tabIndexController tabIdx;
 
 
   CityButton({@required this.cityName,@required this.selectedCity,@required this.tabIdx});

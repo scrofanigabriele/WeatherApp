@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../implementation/single_tab_item.dart';
 import '../implementation/loop_widget_implementation.dart';
 import '../abstraction/tab_bar_page_selection_controller.dart';
-import '../abstraction/select_page_controller.dart';
+import '../abstraction/tab_index_controller.dart';
 
 class SimpleTabBarSelectionPageController
     implements TabBarPageSelectionController {
@@ -11,7 +11,7 @@ class SimpleTabBarSelectionPageController
   List<SingleTabItem> tabBarItemList;
 
   @override
-  SelectPageController tabIdx;
+  tabIndexController tabIdx;
 
   SimpleTabBarSelectionPageController(
       {@required this.tabBarItemList, @required this.tabIdx});
@@ -46,7 +46,7 @@ class DefaultTabBarSelectorController implements TabBarPageSelectionController {
   List<SingleTabItem> tabBarItemList;
 
   @override
-  SelectPageController tabIdx;
+  tabIndexController tabIdx;
 
   @override
   buildTabBar(TabController _tabController) {
