@@ -6,7 +6,7 @@ import '../abstraction/fetch_forecast_controller.dart';
 import './weather_day.dart';
 
 class WeatherPresentationBuilder implements WeatherPresentationController {
-  FetchForecastController forecastController;
+  FetchSelectedCityForecastController forecastController;
   FetchedDataFormatter fetchedDataFormatter;
 
   WeatherPresentationBuilder(

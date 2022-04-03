@@ -5,10 +5,9 @@ import './fetched_data_formatter.dart';
 
 
 abstract class WeatherPresentationController {
-  FetchForecastController forecastController;
+  FetchSelectedCityForecastController forecastController;
   FetchedDataFormatter fetchedDataFormatter;
 
   fetchAndFormatData();
 
-  // formatFetchedData();
 }

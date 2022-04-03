@@ -23,11 +23,11 @@ class _TabBarPageBuilderState extends State<TabBarPageBuilder> with TickerProvid
   }
   @override
   Widget build(BuildContext context) {
-    widget.controller.tabIdx.addListener(() { setState(() {
-        newWidget = widget.controller.buildTabBar(_tabController);
-        // print('listened');
-    });});
-    return newWidget;//widget.controller.buildTabBar(_tabController);
+    // widget.controller.tabIdx.addListener(() { setState(() {
+    //     newWidget = widget.controller.buildTabBar(_tabController);
+    //     print('listened');
+    // });});
+    return widget.controller.buildTabBar(_tabController);
   }
 
 }

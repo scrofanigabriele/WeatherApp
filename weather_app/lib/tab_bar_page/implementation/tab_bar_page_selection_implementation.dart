@@ -19,7 +19,6 @@ class SimpleTabBarSelectionPageController
 
   @override
   buildTabBar(TabController _tabController) {
-    print('build ${tabIdx.selectedIdx}');
     return DefaultTabController(
       length: tabBarItemList.length,
       initialIndex: tabIdx.selectedIdx,
@@ -65,13 +64,12 @@ class DefaultTabBarSelectorController extends StatefulWidget
         labelColor: Colors.black,
         unselectedLabelColor: Colors.amberAccent,
         controller: _tabController,
-        tabs: LoopTabBuilder(widgetItemList: tabBarItemList)
-            .listBuildLoop(),
+        tabs: LoopTabBuilder(widgetItemList: tabBarItemList).listBuildLoop(),
       ),
       body: TabBarView(
         controller: _tabController,
-        children: LoopWidgetBuilder(widgetItemList: tabBarItemList)
-            .listBuildLoop(),
+        children:
+            LoopWidgetBuilder(widgetItemList: tabBarItemList).listBuildLoop(),
       ),
     );
   }
@@ -79,7 +77,6 @@ class DefaultTabBarSelectorController extends StatefulWidget
 
 class _DefaultTabBarSelectorControllerState
     extends State<DefaultTabBarSelectorController> {
-
   @override
   Widget build(BuildContext context) {
     return Text('ciao');
