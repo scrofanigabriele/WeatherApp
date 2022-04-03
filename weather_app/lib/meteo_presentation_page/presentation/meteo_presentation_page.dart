@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/select_city_page/implementation/city_list.dart';
 
 import 'weather_presentation.dart';
-import '../../select_city_page/presentation/select_city_page.dart';
+import '../../widgets/select_city_page.dart';
 import 'package:provider/provider.dart';
 
 import '../../widgets/bottom_bar.dart';

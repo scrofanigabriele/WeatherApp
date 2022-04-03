@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/bottom_bar.dart';
-import 'cities_grid.dart';
+import 'bottom_bar.dart';
+import '../select_city_page/presentation/cities_grid.dart';
 
 class SelectCity extends StatelessWidget {
   static const routeName = '/selectCity';
@@ -13,7 +13,6 @@ class SelectCity extends StatelessWidget {
         title: const Text('Select City'),
       ),
       body: CitiesGrid(),
-      bottomNavigationBar: BottomBar(1),
     );
   }
 }

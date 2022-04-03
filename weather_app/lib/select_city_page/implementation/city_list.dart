@@ -36,6 +36,9 @@ class SelectedCity with ChangeNotifier{
   String _name = 'London';
 
   String get name{
+    // print('Sono dentro');
+    // print(_name);
+    // print('esco');
     return _name;
   }
 

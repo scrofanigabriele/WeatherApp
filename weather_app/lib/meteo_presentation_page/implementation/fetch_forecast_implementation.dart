@@ -14,6 +14,7 @@ class HttpFetchForecast implements FetchForecastController {
 
   @override
   fetchForecast() async {
+    print('fetching data = $cityName');
     // var dataUrl =
     //     'https://api.weatherbit.io/v2.0/forecast/daily?city=london&key=0a5a89cbc5ca43e18dcd31fdb80e21a5';
     var dataUrl =

@@ -33,7 +33,11 @@ class LoopWidgetBuilder implements LoopWidgetsBuilder{
   listBuildLoop() {
     List<Widget> widgetList = [];
     for (SingleTabItem singleWidgetItem in widgetItemList) {
-      widgetList.add(singleWidgetItem.widget);
+      widgetList.add(Scaffold(
+        appBar: AppBar(title: Text(singleWidgetItem.title),
+        ),
+        body: singleWidgetItem.widget,
+      ));
     }
     return widgetList;
   }

@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/meteo_presentation_page/implementation/fetch_forecast_implementation.dart';
 import 'package:weather_app/meteo_presentation_page/implementation/weather_presentation_implementation.dart';
 import 'package:weather_app/meteo_presentation_page/implementation/fetched_data_implementation.dart';
+import 'package:weather_app/select_city_page/implementation/city_list.dart';
+import 'package:weather_app/tab_bar_page/implementation/select_page_implementation.dart';
 
 import 'package:weather_app/tab_bar_page/implementation/single_tab_item.dart';
 import '../implementation/tab_bar_page_selection_implementation.dart';
 import '../implementation/tab_bar_page_builder.dart';
 import '../../meteo_presentation_page/implementation/weather_page_builder.dart';
 import '../../select_city_page/presentation/cities_grid.dart';
+import '../abstraction/select_page_controller.dart';
 
 class TabBarPage extends StatefulWidget {
   const TabBarPage({Key key}) : super(key: key);
@@ -17,17 +20,31 @@ class TabBarPage extends StatefulWidget {
 }
 
 class _TabBarPageState extends State<TabBarPage> {
+  bool isInit = true;
+  var selectedCity = SelectedCity();
+  String cityName;
+  SelectPageController tabIdx = SimpleSelectPageImplementation();
+
+  @override
+  void initState() {
+    cityName = selectedCity.name;
+    print(cityName);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    selectedCity.addListener(() {setState(() {
+      cityName = selectedCity.name;
+      // print(cityName);
+
+    });});
+    print(cityName);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('TabBarPage'),
-      ),
-      body: const Center(
-        child: Text('body'),
-      ),
       bottomNavigationBar: TabBarPageBuilder(
-        controller: SimpleTabBarSelectionPageController(
+        controller: DefaultTabBarSelectorController(
+          tabIdx: tabIdx,
           tabBarItemList: [
             SingleTabItem(
               icon: Icon(Icons.search),
@@ -36,14 +53,14 @@ class _TabBarPageState extends State<TabBarPage> {
                 weatherPresentationBuilder: WeatherPresentationBuilder(
                   fetchedDataFormatter:
                       WeatherBitFiveDaysFetchedDataFormatter(),
-                  forecastController: HttpFetchForecast(cityName: 'Catania'),
+                  forecastController: HttpFetchForecast(cityName: cityName),
                 ),
               ),
             ),
             SingleTabItem(
               icon: Icon(Icons.domain),
               title: 'Select City',
-              widget: CitiesGrid(),
+              widget: CitiesGrid(cities: cities, selectedCity: selectedCity,tabIdx: tabIdx,),
             ),
           ],
         ),

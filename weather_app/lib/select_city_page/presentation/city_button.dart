@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 
 import '../implementation/city_list.dart';
+import '../../tab_bar_page/abstraction/select_page_controller.dart';
+import '../../tab_bar_page/implementation/select_page_implementation.dart';
+
 
 class CityButton extends StatefulWidget {
-  final String cityName;
+  String cityName;
+  SelectedCity selectedCity;
+  SelectPageController tabIdx;
 
-  CityButton(this.cityName);
+
+  CityButton({@required this.cityName,@required this.selectedCity,@required this.tabIdx});
 
   @override
   State<CityButton> createState() => _CityButtonState();
@@ -15,17 +19,16 @@ class CityButton extends StatefulWidget {
 
 class _CityButtonState extends State<CityButton> {
 
-  void _selectCity(BuildContext ctx,SelectedCity newCity) {
-    newCity.changeSelection(widget.cityName);
-    Navigator.of(context).popAndPushNamed('/');
+  void _selectCity(String newCity) {
+    widget.selectedCity.changeSelection(newCity);
+    // print(widget.tabIdx.selectedIdx);
+    widget.tabIdx.changeSelectedIdx(0);
   }
 
   @override
   Widget build(BuildContext context) {
-    // var newCity = Provider.of<SelectedCity>(context);
-
     return InkWell(
-      onTap: () {},//=> _selectCity(context,newCity),
+      onTap: () => _selectCity(widget.cityName),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
