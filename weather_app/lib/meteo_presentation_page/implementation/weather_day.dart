@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WeatherDay {
+  String city = 'London';
   String day = 'Today';
   String iconId = 'c03d';
   String weatherDescription = 'Broken clouds';
@@ -8,6 +9,7 @@ class WeatherDay {
   var minTemp = 10.0;
 
   WeatherDay({
+    @required this.city,
     @required this.day,
     @required this.iconId,
     @required this.maxTemp,

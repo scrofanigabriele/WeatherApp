@@ -38,7 +38,7 @@ class _TabBarPageState extends State<TabBarPage> {
           tabIdx: tabIdx,
           tabBarItemList: [
             SingleTabItem(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               title: 'Search',
               widget: WeatherPageBuilder(
                 weatherPresentationBuilder: WeatherPresentationBuilder(
@@ -49,7 +49,7 @@ class _TabBarPageState extends State<TabBarPage> {
               ),
             ),
             SingleTabItem(
-              icon: Icon(Icons.domain),
+              icon: const Icon(Icons.domain),
               title: 'Select City',
               widget: CitiesGrid(
                 cities: cities,

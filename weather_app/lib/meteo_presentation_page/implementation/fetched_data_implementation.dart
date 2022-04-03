@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../implementation/weather_day.dart';
-import '../abstraction/fetched_data_formatter.dart';
+import '../abstraction/fetched_data_controller.dart';
 
 
 
@@ -11,7 +11,7 @@ class WeatherBitFiveDaysFetchedDataFormatter implements FetchedDataFormatter{
   @override
   var fetchedData;
 
-  WeatherBitFiveDaysFetchedDataFormatter({@required this.fetchedData});
+  WeatherBitFiveDaysFetchedDataFormatter({this.fetchedData});
 
   @override
   formatWeatherBitFetchedData() {
@@ -32,7 +32,10 @@ class WeatherBitFiveDaysFetchedDataFormatter implements FetchedDataFormatter{
       String weatherDescription = weatherInfo['weather']['description'];
       var maxTemp = weatherInfo['max_temp'].toDouble();
       var minTemp = weatherInfo['low_temp'].toDouble();
+      var city = fetchedData['city_name'].toString();
+
       weatherForecast.add(WeatherDay(
+          city: city,
           day: day,
           iconId: iconId,
           maxTemp: maxTemp,

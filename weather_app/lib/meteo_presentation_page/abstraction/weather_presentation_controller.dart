@@ -1,5 +1,5 @@
 import './fetch_forecast_controller.dart';
-import './fetched_data_formatter.dart';
+import './fetched_data_controller.dart';
 
 
 abstract class WeatherPresentationController {

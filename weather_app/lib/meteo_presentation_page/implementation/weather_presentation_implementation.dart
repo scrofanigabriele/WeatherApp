@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../abstraction/weather_presentation_controller.dart';
-import '../abstraction/fetched_data_formatter.dart';
+import '../abstraction/fetched_data_controller.dart';
 import '../abstraction/fetch_forecast_controller.dart';
 import './weather_day.dart';
 

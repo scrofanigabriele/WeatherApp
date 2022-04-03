@@ -38,15 +38,9 @@ class SimpleTabBarSelectionPageController
   }
 }
 
-class DefaultTabBarSelectorController extends StatefulWidget
-    implements TabBarPageSelectionController {
+class DefaultTabBarSelectorController implements TabBarPageSelectionController {
   DefaultTabBarSelectorController(
-      {Key key, @required this.tabBarItemList, @required this.tabIdx})
-      : super(key: key);
-
-  @override
-  _DefaultTabBarSelectorControllerState createState() =>
-      _DefaultTabBarSelectorControllerState();
+      { @required this.tabBarItemList, @required this.tabIdx});
 
   @override
   List<SingleTabItem> tabBarItemList;
@@ -71,13 +65,5 @@ class DefaultTabBarSelectorController extends StatefulWidget
             LoopWidgetBuilder(widgetItemList: tabBarItemList).listBuildLoop(),
       ),
     );
-  }
-}
-
-class _DefaultTabBarSelectorControllerState
-    extends State<DefaultTabBarSelectorController> {
-  @override
-  Widget build(BuildContext context) {
-    return Text('ciao');
   }
 }

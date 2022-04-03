@@ -13,20 +13,15 @@ class TabBarPageBuilder extends StatefulWidget {
 
 class _TabBarPageBuilderState extends State<TabBarPageBuilder> with TickerProviderStateMixin{
   TabController _tabController;
-  Widget newWidget;
+
   @override
   void initState() {
     super.initState();
     _tabController =
         TabController(length: widget.controller.tabBarItemList.length, vsync: this);
-    newWidget = widget.controller.buildTabBar(_tabController);
   }
   @override
   Widget build(BuildContext context) {
-    // widget.controller.tabIdx.addListener(() { setState(() {
-    //     newWidget = widget.controller.buildTabBar(_tabController);
-    //     print('listened');
-    // });});
     return widget.controller.buildTabBar(_tabController);
   }
 

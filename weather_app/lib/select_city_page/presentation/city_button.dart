@@ -20,7 +20,6 @@ class _CityButtonState extends State<CityButton> {
 
   void _selectCity(String newCity) {
     widget.selectedCity.changeSelection(newCity);
-    // print(widget.tabIdx.selectedIdx);
     widget.tabIdx.changeSelectedIdx(0);
   }
 
