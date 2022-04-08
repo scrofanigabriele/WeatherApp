@@ -8,9 +8,10 @@ class CityButton extends StatefulWidget {
   String cityName;
   SelectedCity selectedCity;
   tabIndexController tabIdx;
+  CityButtonDelegate delegate;
 
 
-  CityButton({@required this.cityName,@required this.selectedCity,@required this.tabIdx});
+  CityButton({@required this.cityName,@required this.selectedCity,@required this.tabIdx, @required this.delegate});
 
   @override
   State<CityButton> createState() => _CityButtonState();
@@ -26,7 +27,7 @@ class _CityButtonState extends State<CityButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => _selectCity(widget.cityName),
+      onTap: () => widget.delegate.onButtonPressedForCity(widget.cityName),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
@@ -44,4 +45,8 @@ class _CityButtonState extends State<CityButton> {
       ),
     );
   }
+}
+
+abstract class CityButtonDelegate {
+  onButtonPressedForCity(String city);
 }

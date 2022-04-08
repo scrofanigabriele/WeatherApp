@@ -45,14 +45,14 @@ class JsonFetchForecast implements FetchForecastController {
 }
 
 
-class HttpFetchSelectedCityForecast implements FetchSelectedCityForecastController {
+class RemoteWeatherRepository implements FetchSelectedCityForecastController {
   @override
   SelectedCity selectedCity;
 
-  HttpFetchSelectedCityForecast({this.selectedCity});
+  RemoteWeatherRepository({this.selectedCity});
 
   @override
-  fetchForecast() async {
+  fetchForecast(selectedCity) async {
     // print('fetching data = ${selectedCity.name}');
     // var dataUrl =
     //     'https://api.weatherbit.io/v2.0/forecast/daily?city=london&key=0a5a89cbc5ca43e18dcd31fdb80e21a5';

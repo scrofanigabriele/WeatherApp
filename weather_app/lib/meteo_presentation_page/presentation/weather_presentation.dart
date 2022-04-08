@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/meteo_presentation_page/implementation/weather_day.dart';
 
 import './weather_row.dart';
 
 class WeatherPresentation extends StatelessWidget {
-  var weatherForecast;
+  List<WeatherDay> weatherForecast;
 
   WeatherPresentation({@required this.weatherForecast});
 

@@ -45,7 +45,7 @@ class _TabBarPageState extends State<TabBarPage> {
                   selectedCity: selectedCity,
                   fetchedDataFormatter:
                       WeatherBitFiveDaysFetchedDataFormatter(),
-                  forecastController: HttpFetchSelectedCityForecast(),
+                  forecastController: RemoteWeatherRepository(),
                 ),
               ),
             ),
@@ -57,8 +57,16 @@ class _TabBarPageState extends State<TabBarPage> {
                 selectedCity: selectedCity,
                 tabIdx: tabIdx,
               ),
+            ), SingleTabItem(
+            icon: const Icon(Icons.domain),
+            title: 'Select City',
+            widget: CitiesGrid(
+              cities: cities,
+              selectedCity: selectedCity,
+              tabIdx: tabIdx,
             ),
-          ],
+          ),
+        ],
         ),
       );
   }

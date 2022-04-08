@@ -5,10 +5,11 @@ import 'city_button.dart';
 import '../../tab_bar_page/abstraction/tab_index_controller.dart';
 
 
-class CitiesGrid extends StatelessWidget {
+class CitiesGrid extends StatelessWidget implements CityButtonDelegate {
   List cities;
   SelectedCity selectedCity;
   tabIndexController tabIdx;
+  
 
 
   CitiesGrid({@required this.cities,@required this.selectedCity, @required this.tabIdx});
@@ -21,8 +22,15 @@ class CitiesGrid extends StatelessWidget {
       children: List.generate(cities.length, (index) {
         return Container(
           padding: EdgeInsets.all(10),
-            child: CityButton(cityName: cities[index],selectedCity: selectedCity,tabIdx: tabIdx,));
+            child: CityButton(cityName: cities[index],selectedCity: selectedCity,tabIdx: tabIdx,delegate: this,));
       }),
     );
   }
+
+  @override
+  onButtonPressedForCity(String city) {
+    // TODO: implement onButtonPressedForCity
+    throw UnimplementedError();
+  }
 }
+
